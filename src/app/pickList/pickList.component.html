@@ -1,0 +1,15 @@
+<p-pickList [source]="list1" [target]="list2" sourceHeader="Lista de itens" targetHeader="Items para comprar"
+[dragdrop]="true" [responsive]="true" [sourceStyle]="{'height':'30rem'}" [targetStyle]="{'height':'30rem'}"
+filterBy="nome" sourceFilterPlaceholder="Digite o nome do produto" 
+targetFilterPlaceholder="Digite o nome do produto">
+    <ng-template let-produto pTemplate="item">
+        <div>
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">
+                {{ produto.nome }} ({{ produto.quantidade }})</div>
+        </div>
+    </ng-template>
+</p-pickList>
+
+<div class="col-md-12" id="divBtn">
+    <button pButton type="button" label="Enviar" class="p-button-primary" (click)="listarProdutos()"></button>
+</div>
