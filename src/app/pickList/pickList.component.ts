@@ -1,11 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 
 @Component({
     selector: 'pickList',
     templateUrl: 'pickList.component.html',
     styleUrls: ['pickList.component.css']
 })
-export class PickList {
+export class PickList implements OnInit {
 
     public list1: Array<{nome: string, quantidade: number}> = [];
     
@@ -36,6 +36,14 @@ export class PickList {
     }
     
     ngOnInit() {}
+
+    public exibeValorList1() : void {
+        console.log(this.list1);
+    }
+
+    public exibeValorList2() : void {
+        console.log(this.list2);
+    }
 
     public listarProdutos() : void {
 
